@@ -1,0 +1,35 @@
+server:
+  port: 8551
+
+
+# 客户端注册进eureka服务列表里
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://127.0.0.1:7001/eureka/
+  instance:
+    instanceId: config-server-my
+    preferIpAddress: true
+
+spring:
+  application:
+    name: config-server-my
+  cloud:
+
+    config:
+      server:
+        git:
+          uri: https://github.com/kouhao2018/config-reposity.git         # 配置git仓库的地址
+          search-paths: config-repository                             # git仓库地址下的相对地址，可以配置多个，用,分割。
+#          username: username                                          # git仓库的账号
+#          password: password                                          # git仓库的密码
+
+  kafka:
+    bootstrap-servers: 192.168.188.128:9092
+    consumer:
+      group-id: config-server
+      auto-commit-interval: 100
+      auto-offset-reset: earliest
+      enable-auto-commit: true
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
