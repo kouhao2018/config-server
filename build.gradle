@@ -28,6 +28,6 @@ dependencies {
 	compile group: 'org.springframework.boot', name: 'spring-boot-starter-actuator', version: '2.1.4.RELEASE'
 
 
-	compile group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.2.7.RELEASE'
+//	compile group: 'org.springframework.kafka', name: 'spring-kafka', version: '2.2.7.RELEASE'
 
 }

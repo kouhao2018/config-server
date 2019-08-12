@@ -6,16 +6,16 @@ server:
 eureka:
   client:
     serviceUrl:
-      defaultZone: http://127.0.0.1:7001/eureka/
+      defaultZone: http://root:root@127.0.0.1:7001/eureka/
   instance:
     instanceId: config-server-my
     preferIpAddress: true
+
 
 spring:
   application:
     name: config-server-my
   cloud:
-
     config:
       server:
         git:
@@ -24,12 +24,12 @@ spring:
 #          username: username                                          # git仓库的账号
 #          password: password                                          # git仓库的密码
 
-  kafka:
-    bootstrap-servers: 192.168.188.128:9092
-    consumer:
-      group-id: config-server
-      auto-commit-interval: 100
-      auto-offset-reset: earliest
-      enable-auto-commit: true
-      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
-      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#  kafka:
+#    bootstrap-servers: 192.168.188.128:9092
+#    consumer:
+#      group-id: config-server
+#      auto-commit-interval: 100
+#      auto-offset-reset: earliest
+#      enable-auto-commit: true
+#      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+#      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
